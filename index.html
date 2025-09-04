@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musfequa Rahman</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fefefe;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2ea6e6;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        nav a:hover, nav a.active {
+            color: #0066cc;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+             text-align: center;
+        }
+
+      .title {
+            font-size: 1.3rem;
+            color: #3239f7;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+
+        .bio {
+            font-size: 0.9rem;
+            line-height: 1;
+            color: #111010;
+            margin-bottom: 4rem;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3067f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .contact-links a:hover {
+            color: #0066cc;
+        }
+
+        .contact-links i {
+            font-size: 1.1rem;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            background: #0052a3;
+            transform: translateY(-1px);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+        }
+          .grant-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid #f39c12;
+        }
+
+        .grant-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+            .grant-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .grant-role {
+            color: #f39c12;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .grant-details {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+
+        .grant-funding {
+            background: #fff3cd;
+            color: #856404;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        /* Research Interests - Minimalist */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .research-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .research-item:hover {
+            border-color: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,102,204,0.08);
+        }
+
+        .research-icon {
+            font-size: 1.5rem;
+            color: #0066cc;
+            width: 24px;
+            text-align: center;
+        }
+
+        .research-name {
+            font-weight: 500;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            border-color: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,102,204,0.08);
+        }
+
+        .education-card h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .institution {
+            color: #0066cc;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .gpa {
+            background: #f8f9fa;
+            color: #0066cc;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0,102,204,0.2);
+        }
+
+                /* Publications - Academic Paper Style */
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .publication-item {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .publication-image {
+            width: 160px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .publication-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .publication-item:hover .publication-image::before {
+            transform: translateX(100%);
+        }
+
+        .publication-content {
+            flex: 1;
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2682de;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .publication-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .publication-title a:hover {
+            color: #101010;
+        }
+
+        .publication-authors {
+            margin-bottom: 0.8rem;
+            color: #1a1b1c;
+            font-size: 1rem;
+        }
+
+        .publication-authors strong {
+            color: #2f80d0;
+        }
+
+        .publication-venue {
+            color: #090a0a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .publication-description {
+            color: #0d0d0d;
+            line-height: 1.6;
+            font-size: 0.8rem;
+            text-align: justify;
+        }
+
+        .publication-type {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #28a745;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        /* Projects Section - NEW */
+        .projects-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .projects-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #0066cc, transparent);
+        }
+
+        .projects-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .projects-subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            width: 8px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .project-card:hover .project-icon::after {
+            animation: shine 0.6s ease-in-out;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .project-subtitle {
+            color: #0066cc;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .project-features {
+            margin-bottom: 2rem;
+        }
+
+        .project-features h4 {
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .feature-item i {
+            color: #28a745;
+            font-size: 0.8rem;
+        }
+
+        .tech-stack {
+            margin-bottom: 2rem;
+        }
+
+        .tech-stack h4 {
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: #0066cc;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(0,102,204,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: linear-gradient(135deg, #0066cc, #0052a3);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .project-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn.primary {
+            background: linear-gradient(135deg, #0066cc, #0052a3);
+            color: white;
+        }
+
+        .action-btn.primary:hover {
+            background: linear-gradient(135deg, #0052a3, #004080);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+        }
+
+        .action-btn.secondary {
+            background: white;
+            color: #0066cc;
+            border: 2px solid #0066cc;
+        }
+
+        .action-btn.secondary:hover {
+            background: #0066cc;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f8f9fa;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: #0066cc;
+            transform: translateY(-2px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .contact-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Timeline for Experience */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 8px;
+            height: 8px;
+            background: #0066cc;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #0066cc;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: rgba(0,102,204,0.2);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-item h3 {
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .timeline-item .company {
+            color: #0066cc;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item .date {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .timeline-item ul {
+            color: #555;
+            padding-left: 1.2rem;
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .award-card {
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover {
+            border-color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        .award-icon {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .award-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .award-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-card small {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: #0066cc;
+            transform: translateY(-2px);
+        }
+
+        .skill-category i {
+            font-size: 2rem;
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .skill-category h3 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #f8f9fa;
+            color: #0066cc;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(0,102,204,0.2);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,102,204,0.08);
+        }
+
+        .project-status {
+            background: #e8f4fd;
+            color: #0066cc;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: #f8f9fa;
+            color: #666;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .name {
+                font-size: 2.8rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+            
+            .contact-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Current research highlight */
+        .current-research {
+            background: #f0f8ff;
+            padding: 2rem;
+            border: 1px solid rgba(0,102,204,0.2);
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .current-research h3 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .current-research p {
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        /* News section */
+        .news-section {
+            background: #bddbed;
+            padding: 2rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .news-section h2 {
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .news-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .news-date {
+            font-weight: 600;
+            color: #0066cc;
+        }
+
+        .news-item p {
+            margin: 0;
+            color: #555;
+        }
+
+        /* Typography improvements */
+        h1, h2, h3 {
+            font-weight: 500;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* Links */
+        a {
+            color: #0066cc;
+        }
+
+        a:hover {
+            color: #0052a3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#publications">Publications</a></li>
+             <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="name">Musfequa Rahman</h1>
+                    <p class="title">AI Researcher | PhD Aspirant</p>
+                    <p class="bio">
+                        I'm a lecturer in Computer Science and Engineering (CSE) at <strong>Chittagong Veterinary and Animal Sciences University</strong>. I have completed my <strong> M.Sc.</strong> and <strong> B.Sc. </strong> in CSE from Chittagong University of Engineering & Technology with exceptional academic performance. My research focuses on Generative AI, Agentic AI, Large Language Models, Human Computer Interaction,and Multimodal Reasoning with emphasis on creating trustworthy and interpretable AI systems.
+                    </p>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:musfequa@cvasu.ac.bd">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="https://linkedin.com/in/musfequa-rahman-976a8a271/">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/MusfequaRahman">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=a5OQmGoAAAAJ">
+                            <i class="fas fa-graduation-cap"></i> Scholar
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <a href="data/CV of Musfequa Rahman.pdf" class="btn">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="images/profile photo.jpeg" style="width:100%;max-width:100%;object-fit: cover; border-radius: 45%;" alt="Musfequa Rahman" class="images">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="section">
+        <div class="container">
+            <!-- News Section -->
+            <div class="news-section">
+                <h2><i class="fas fa-bullhorn"></i> Recent News</h2>
+                <div class="news-item">
+                    <p><span class="news-date">2025:</span> Three papers accepted to IEEE Access on multimodal AI, violence detection, and biomedical imaging</p>
+                </div>
+                <div class="news-item">
+                    <p><span class="news-date">Jul 2024:</span> Awarded Principal Investigator role for UGC, Bangladesh-funded research project on "Artificial Food Colorants in Processed Foods: A Machine Learning Study"</p>
+                </div>
+            </div>
+
+            <!-- Research Interests -->
+            <section id="research">
+                <h2 class="section-title">Research Interests</h2>
+                <div class="research-grid">
+                    <div class="research-item">
+                        <i class="fas fa-robot research-icon"></i>
+                        <span class="research-name">Agentic AI</span>
+                    </div>
+                    
+                    <div class="research-item">
+                        <i class="fas fa-brain research-icon"></i>
+                        <span class="research-name">Large Language Models</span>
+                    </div>
+                    <div class="research-item">
+    <i class="fas fa-wand-magic-sparkles research-icon"></i>
+    <span class="research-name">Generative AI</span>
+</div>
+                    <div class="research-item">
+                        <i class="fas fa-eye research-icon"></i>
+                        <span class="research-name">Multimodal Reasoning</span>
+                    </div>
+                    
+                    <div class="research-item">
+                        <i class="fas fa-users research-icon"></i>
+                        <span class="research-name">Human-Computer Interaction</span>
+                    </div>
+                    
+                    <div class="research-item">
+                        <i class="fas fa-shield-alt research-icon"></i>
+                        <span class="research-name">Trustworthy AI</span>
+                    </div>
+                    
+                    <div class="research-item">
+                        <i class="fas fa-microscope research-icon"></i>
+                        <span class="research-name">Biomedical AI</span>
+                    </div>
+                </div>
+
+                <!-- Current Research Project -->
+                <div class="current-research">
+                    <h3><i class="fas fa-flask"></i> Current Research Grant</h3>
+              
+                <div class="grant-card">
+                    <div class="grant-title">Artificial Food Colorants in Processed Foods: A Machine Learning Study</div>
+                    <div class="grant-role">Principal Investigator</div>
+                    <div class="grant-details">July 2024 – June 2025 </div>
+                    <div class="grant-funding">Funding: University Grants Commission (UGC), Bangladesh</div>
+                </div>
+                
+                <div class="grant-card">
+                    <div class="grant-title">Quality Evaluation of Commonly Consumed Processed Food in Chattogram and Risk Assessment</div>
+                    <div class="grant-role">Investigator</div>
+                    <div class="grant-details">July 2024 – June 2025 | Implemented By: Faculty of Food Science & Technology, CVASU</div>
+                    <div class="grant-funding">Funding: University Grants Commission (UGC), BangladeshU</div>
+                </div>
+            
+                    </div>
+                    
+              
+            </section>
+
+            <!-- Education Section -->
+            <section id="education">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>M.Sc. in Computer Science and Engineering</h3>
+                        <div class="institution">Chittagong University of Engineering and Technology (CUET)</div>
+                        <div class="education-details">
+                            <span><i class="fas fa-calendar"></i> Jul 2023 – June 2025</span>
+                            <span class="gpa">GPA: 3.75/4.00</span>
+                        </div>
+                        <p><strong>Awards:</strong> Dean's Award | <strong>Focus:</strong> Multimodal AI, Computer Vision, Deep Learning</p>
+                    </div>
+                    
+                    <div class="education-card">
+                        <h3>B.Sc. in Computer Science and Engineering</h3>
+                        <div class="institution">Chittagong University of Engineering and Technology (CUET)</div>
+                        <div class="education-details">
+                            <span><i class="fas fa-calendar"></i> Jan 2018 – Jul 2023</span>
+                            <span class="gpa">GPA: 3.91/4.00</span>
+                        </div>
+                        <p><strong>Merit Position:</strong> 3rd/130 | <strong>Awards:</strong> University Merit Scholarship, Dean's Award</p>
+                    </div>
+                </div>
+            </section>
+
+            
+                  
+
+            <!-- Publications Section -->
+            <section id="publications">
+                <h2 class="section-title">Publications</h2>
+                <div class="publications-list">
+                    
+                    <!-- Publication 1 -->
+                    <div class="publication-item">
+                     
+                        <div class="publication-image">
+                           <img src='images/outcome.PNG' width="100%">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=a5OQmGoAAAAJ&citation_for_view=a5OQmGoAAAAJ:qjMakFHDy7sC">CAMFusion: Context-Aware Multi-Modal Fusion Framework for Detecting Sarcasm and Humor Integrating Video and Textual Cues</a>
+                            </div>
+                            <div class="publication-authors">
+                                <strong>Musfequa Rahman</strong>, M.A.M. Provath, K. Deb, P.K. Dhar, T. Shimamura
+                            </div>
+                            <div class="publication-venue">IEEE Access, 2025</div>
+                            <div class="publication-description">
+                               This work introduces a <strong>Context-Aware Multi-modal Fusion Framework</strong> for detecting sarcasm and humor in <strong>Bangla videos</strong>. A new multimodal dataset was curated, annotated across humor, sarcasm, and normal categories. The framework fuses visual features from an Efficient Fusion Time-Distributed MobileNetV2 with textual representations from BiLSTM and GRU, attaining <strong>90% accuracy</strong>. A novel <strong>Bangla Text Extraction Algorithm</strong> enhances contextual retrieval from complex frames, with cross-dataset evaluations confirming the model’s robustness and generalizability.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <div class="publication-item">
+                       
+                        <div class="publication-image">
+                            <img src='images/deepguard.PNG' width="100%", height="100%">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=a5OQmGoAAAAJ&citation_for_view=a5OQmGoAAAAJ:UeHWp8X0CEIC">DeepGuard: Enhancing Violence Detection in Smart Cities through Deep Learning</a>
+                            </div>
+                            <div class="publication-authors">
+                                M.A.M. Provath, <strong>Musfequa Rahman</strong>, K. Deb, P.K. Dhar, T. Shimamura
+                            </div>
+                            <div class="publication-venue">IEEE Access, 2025</div>
+                            <div class="publication-description">
+                           To advance research on video-based security systems, this work introduces a <strong>specialized dataset on political violence</strong>, comprising 480 labeled clips across four categories. Building on this resource, we fine-tuned <strong>MoViNet-A0</strong>, attaining <strong>92.86% accuracy</strong> with only 1.904M parameters. A custom <strong>keyframe extraction algorithm</strong> leveraging temporal and pixel-level cues further enhances stability and detection accuracy. Extensive evaluations demonstrate clear improvements over existing approaches, establishing a strong benchmark for future work in <strong>violence detection for smart cities</strong>.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                       
+                        <div class="publication-image">
+                           <img src='images/adbnet.PNG' width="100%", height="100%">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=a5OQmGoAAAAJ&citation_for_view=a5OQmGoAAAAJ:u-x6o8ySG0sC">ADBNet: an attention-guided deep broad convolutional neural network for the classification of breast cancer histopathology images</a>
+                            </div>
+                            <div class="publication-authors">
+                                <strong>Musfequa Rahman</strong>, K. Deb, P.K. Dhar, T. Shimamura
+                            </div>
+                            <div class="publication-venue">IEEE Access, 2024</div>
+                            <div class="publication-description">
+                               <strong>ADBNet</strong>, an attention-guided deep broad convolutional network for <strong>breast cancer histopathology classification</strong>. By combining feature-selective attention, magnification-resilient design, and GAN–diffusion-based data augmentation, ADBNet achieves up to <strong>99.52% accuracy</strong>, surpassing existing methods and offering a robust tool for computer-aided diagnosis.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Publication 3 -->
+                           <div class="publication-item">
+                        
+                        <div class="publication-image">
+                              <img src='images/crickshot.PNG' width="100%", height="100%">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="#">CricActionNet: A Comprehensive Framework for Cricket Action Recognition Using Keyframe Extraction and DenseNet-Transformer Based Architecture</a>
+                            </div>
+                            <div class="publication-authors">
+                                TM Mitul, <strong>Musfequa Rahman</strong>, K. Deb
+                            </div>
+                            <div class="publication-venue">Engineering Science and Technology, an International Journal, 2025 (In Submission)</div>
+                            <div class="publication-description">
+                            <strong>CricShot14</strong>, the largest dataset for <strong>cricket action recognition</strong>, spanning fourteen distinct action categories. A novel <strong>keyframe extraction technique</strong> tailored to cricket videos was developed, enabling more precise action analysis. By integrating <strong>DenseNet121</strong> for feature extraction with a <strong>Transformer</strong> for sequence modeling, our framework achieves <strong>93.44% accuracy</strong>. Extensive evaluations on CricShot10 and CKT datasets confirm superior performance over existing methods, establishing a new benchmark for <strong>Human Action Recognition in sports</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Publication 4 -->
+              
+
+                    <!-- Publication 5 -->
+                    <div class="publication-item">
+                        
+                        <div class="publication-image">
+                      <img src='images/icmam.PNG' width="100%", height="100%">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="#">Efficient Bangla Multimodal Humor Detection with Lightweight Dictionary-Based Transformations</a>
+                            </div>
+                            <div class="publication-authors">
+                                <strong>Musfequa Rahman</strong>, M.A.M. Provath, K. Deb
+                            </div>
+                            <div class="publication-venue">3rd ICMAM, 2024</div>
+                            <div class="publication-description">
+                                The <strong>Lite-MDETR</strong> framework leverages <strong>Dictionary-Lookup Transformations (DLT)</strong> to cut memory usage by 52% and reduce parameters from 100M to 48M, while still achieving <strong>86% accuracy</strong> in Bangla multimodal humor detection. A new dataset capturing diverse visual–verbal contexts further strengthens scalability and resource efficiency.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Publication 6 -->
+                    <div class="publication-item">
+                        
+                        <div class="publication-image">
+                           <img src='images/book.PNG' width="100%", height="100%">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=a5OQmGoAAAAJ&citation_for_view=a5OQmGoAAAAJ:u5HHmVD_uO8C">Classifying Breast Cancer Using Deep Convolutional Neural Network Method</a>
+                            </div>
+                            <div class="publication-authors">
+                                <strong>Musfequa Rahman</strong>, K. Deb, K.H. Jo
+                            </div>
+                            <div class="publication-venue">International Workshop on Frontiers of Computer Vision (Springer Nature Singapore), 2023</div>
+                            <div class="publication-description">
+                               The <strong>Breast Cancer CNN Classifier</strong> uses deep learning on the <strong>BreaKHis dataset</strong> to analyze histopathology images, reaching <strong>99.5% binary accuracy</strong> and <strong>96.1% multiclass accuracy</strong>, without the need for manual feature engineering.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+           
+
+    <!-- Projects Section -->
+    <section id="projects">
+  
+                <h2 class="section-title">Projects</h2>
+             
+
+            <div class="projects-grid">
+                <!-- Project 1: Academic Research Assistant -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div>
+                            <h3 class="project-title">Academic Research Assistant</h3>
+                            <p class="project-subtitle">AI-Powered Research Paper Discovery & Proposal Generation</p>
+                        </div>
+                    </div>
+
+                    <p class="project-description">
+                        An intelligent research assistant built with <strong>CrewAI</strong> that autonomously searches academic databases, 
+                        analyzes papers, identifies research gaps, and generates comprehensive project proposals. The system leverages 
+                        <strong>multi-agent orchestration</strong> to simulate the research process of expert academics, providing structured 
+                        outputs ready for grant submissions or thesis proposals.
+                    </p>
+
+                    <div class="project-features">
+                        <h4>Key Capabilities</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Multi-source paper aggregation</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Automated gap analysis</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Proposal structure generation</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Citation management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Technical Implementation</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">CrewAI</span>
+                            <span class="tech-tag">Gemini API</span>
+                            <span class="tech-tag">Serper Dev</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                            <span class="tech-tag">Markdown</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Project 2: AI Cold Email Generator -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div>
+                            <h3 class="project-title">AI Cold Email Generator</h3>
+                            <p class="project-subtitle">Intelligent Portfolio-Job Matching System</p>
+                        </div>
+                    </div>
+
+                    <p class="project-description">
+                        A sophisticated web application that automatically scrapes job postings, analyzes requirements using 
+                        <strong>LLaMA 3.3</strong>, matches them against your portfolio using <strong>vector similarity search</strong>, 
+                        and generates personalized professional emails. The system demonstrates advanced NLP techniques combined 
+                        with practical business applications for academic and industry networking.
+                    </p>
+
+                    <div class="project-features">
+                        <h4>Core Features</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Smart job requirement extraction</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Vector-based portfolio matching</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Professional email generation</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Tech stack alignment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Technical Architecture</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">Groq API</span>
+                            <span class="tech-tag">ChromaDB</span>
+                            <span class="tech-tag">WebBaseLoader</span>
+                            <span class="tech-tag">Vector Search</span>
+                        </div>
+                    </div>
+
+
+                </div>         
+          
+
+
+        </div>
+    </section>   
+           
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Interested in research collaboration or academic opportunities?</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>musfequa@cvasu.ac.bd</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Professional Network</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Google Scholar</h3>
+                    <p>Research Publications</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Code & Projects</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <a href="mailto:musfequa@cvasu.ac.bd" class="btn">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add active navigation state
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Fade in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.education-card, .publication-item, .timeline-item, .skill-category, .award-card, .project-card, .research-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
